@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Editor - Daniel Schacht Photography</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .admin-header {
+            background: #2EA3F2;
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .admin-header h1 {
+            font-size: 1.5rem;
+        }
+
+        .admin-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .editor-tabs {
+            display: flex;
+            background: white;
+            border-radius: 8px 8px 0 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .tab-button {
+            padding: 1rem 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-button.active {
+            background: #f8f9fa;
+            border-bottom-color: #2EA3F2;
+            color: #2EA3F2;
+        }
+
+        .tab-button:hover {
+            background: #f8f9fa;
+        }
+
+        .editor-content {
+            background: white;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            min-height: 600px;
+        }
+
+        .tab-pane {
+            display: none;
+            padding: 2rem;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #2EA3F2;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #2EA3F2;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1a8cd8;
+        }
+
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #218838;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #545b62;
+        }
+
+        .service-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #2EA3F2;
+        }
+
+        .portfolio-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #28a745;
+        }
+
+        .json-editor {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            height: 400px;
+            background: #2d3748;
+            color: #e2e8f0;
+            border: none;
+            border-radius: 6px;
+            padding: 1rem;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            border: 1px solid #c3e6cb;
+        }
+
+        .warning-message {
+            background: #fff3cd;
+            color: #856404;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            border: 1px solid #ffeaa7;
+        }
+
+        .instructions {
+            background: #e7f3ff;
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #2EA3F2;
+        }
+
+        .instructions h3 {
+            margin-bottom: 1rem;
+            color: #2EA3F2;
+        }
+
+        .instructions ul {
+            padding-left: 1.5rem;
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .admin-container {
+                padding: 0 1rem;
+            }
+            
+            .editor-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .tab-button {
+                flex: 1;
+                min-width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="admin-header">
+        <h1>📸 Daniel Schacht Photography - Content Editor</h1>
+    </header>
+
+    <div class="admin-container">
+        <div class="instructions">
+            <h3>📝 How to Update Your Website</h3>
+            <ul>
+                <li><strong>Basic Info:</strong> Update contact details, bio, and main content</li>
+                <li><strong>Services:</strong> Add, edit, or remove photography services</li>
+                <li><strong>Portfolio:</strong> Manage your portfolio items and categories</li>
+                <li><strong>Advanced:</strong> Direct JSON editing for power users</li>
+                <li><strong>Remember:</strong> Click "Save Changes" after editing each section</li>
+            </ul>
+        </div>
+
+        <div class="editor-tabs">
+            <button class="tab-button active" onclick="showTab('basic')">Basic Info</button>
+            <button class="tab-button" onclick="showTab('services')">Services</button>
+            <button class="tab-button" onclick="showTab('portfolio')">Portfolio</button>
+            <button class="tab-button" onclick="showTab('advanced')">Advanced</button>
+        </div>
+
+        <div class="editor-content">
+            <!-- Basic Info Tab -->
+            <div id="basic-tab" class="tab-pane active">
+                <h2>📋 Basic Information</h2>
+                
+                <div class="form-group">
+                    <label for="site-title">Website Title</label>
+                    <input type="text" id="site-title" placeholder="Daniel Schacht Photography | Professional Photographer San Diego">
+                </div>
+
+                <div class="form-group">
+                    <label for="site-description">Website Description (for SEO)</label>
+                    <textarea id="site-description" placeholder="Professional photography in San Diego specializing in portraits, real estate, graduation, and drone photography."></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" placeholder="danielschacht@proton.me">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-phone">Phone</label>
+                        <input type="tel" id="contact-phone" placeholder="(619) 800-5329">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="hero-title">Main Headline</label>
+                    <input type="text" id="hero-title" placeholder="Capturing Stories Through Professional Photography">
+                </div>
+
+                <div class="form-group">
+                    <label for="hero-subtitle">Subtitle</label>
+                    <textarea id="hero-subtitle" placeholder="San Diego-based photographer specializing in portraits, real estate, graduation, and drone photography."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="about-content">About Section</label>
+                    <textarea id="about-content" rows="5" placeholder="Working with Daniel Schacht for photography is a great choice because of his versatility, professionalism, and artistic eye."></textarea>
+                </div>
+
+                <button class="btn btn-primary" onclick="saveBasicInfo()">💾 Save Basic Info</button>
+            </div>
+
+            <!-- Services Tab -->
+            <div id="services-tab" class="tab-pane">
+                <h2>🎯 Photography Services</h2>
+                <div id="services-list">
+                    <!-- Services will be loaded here -->
+                </div>
+                <button class="btn btn-success" onclick="addNewService()">➕ Add New Service</button>
+                <button class="btn btn-primary" onclick="saveServices()">💾 Save Services</button>
+            </div>
+
+            <!-- Portfolio Tab -->
+            <div id="portfolio-tab" class="tab-pane">
+                <h2>🖼️ Portfolio Management</h2>
+                <div id="portfolio-list">
+                    <!-- Portfolio items will be loaded here -->
+                </div>
+                <button class="btn btn-success" onclick="addNewPortfolioItem()">➕ Add Portfolio Item</button>
+                <button class="btn btn-primary" onclick="savePortfolio()">💾 Save Portfolio</button>
+            </div>
+
+            <!-- Advanced Tab -->
+            <div id="advanced-tab" class="tab-pane">
+                <h2>⚙️ Advanced JSON Editor</h2>
+                <div class="warning-message">
+                    <strong>⚠️ Warning:</strong> This is for advanced users. Invalid JSON will break your website. Always backup before making changes.
+                </div>
+                
+                <div class="form-group">
+                    <label for="json-editor">Raw JSON Content</label>
+                    <textarea id="json-editor" class="json-editor" placeholder="Loading content..."></textarea>
+                </div>
+
+                <button class="btn btn-secondary" onclick="loadJSON()">🔄 Reload from File</button>
+                <button class="btn btn-primary" onclick="saveJSON()">💾 Save JSON</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentContent = {};
+
+        // Tab functionality
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-pane').forEach(pane => {
+                pane.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName + '-tab').classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Load content on page load
+        async function loadContent() {
+            try {
+                const response = await fetch('./content.json');
+                currentContent = await response.json();
+                populateFields();
+                showMessage('Content loaded successfully!', 'success');
+            } catch (error) {
+                showMessage('Could not load content.json. Using default values.', 'warning');
+                console.error('Error loading content:', error);
+            }
+        }
+
+        function populateFields() {
+            // Basic Info
+            document.getElementById('site-title').value = currentContent.site?.title || '';
+            document.getElementById('site-description').value = currentContent.site?.description || '';
+            document.getElementById('contact-email').value = currentContent.site?.contact?.email || '';
+            document.getElementById('contact-phone').value = currentContent.site?.contact?.phone || '';
+            document.getElementById('hero-title').value = currentContent.hero?.title || '';
+            document.getElementById('hero-subtitle').value = currentContent.hero?.subtitle || '';
+            document.getElementById('about-content').value = currentContent.about?.content?.join('\\n\\n') || '';
+
+            // Services
+            renderServices();
+            
+            // Portfolio
+            renderPortfolio();
+            
+            // JSON Editor
+            document.getElementById('json-editor').value = JSON.stringify(currentContent, null, 2);
+        }
+
+        function renderServices() {
+            const container = document.getElementById('services-list');
+            container.innerHTML = '';
+            
+            if (currentContent.services) {
+                currentContent.services.forEach((service, index) => {
+                    const serviceDiv = document.createElement('div');
+                    serviceDiv.className = 'service-item';
+                    serviceDiv.innerHTML = \`
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Service Name</label>
+                                <input type="text" value="\${service.name}" onchange="updateService(\${index}, 'name', this.value)">
+                            </div>
+                            <div class="form-group">
+                                <label>Icon (emoji)</label>
+                                <input type="text" value="\${service.icon}" onchange="updateService(\${index}, 'icon', this.value)">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea onchange="updateService(\${index}, 'description', this.value)">\${service.description}</textarea>
+                        </div>
+                        <button class="btn btn-secondary" onclick="removeService(\${index})">🗑️ Remove</button>
+                    \`;
+                    container.appendChild(serviceDiv);
+                });
+            }
+        }
+
+        function renderPortfolio() {
+            const container = document.getElementById('portfolio-list');
+            container.innerHTML = '';
+            
+            if (currentContent.portfolio?.featured) {
+                currentContent.portfolio.featured.forEach((item, index) => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'portfolio-item';
+                    itemDiv.innerHTML = \`
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Title</label>
+                                <input type="text" value="\${item.title}" onchange="updatePortfolioItem(\${index}, 'title', this.value)">
+                            </div>
+                            <div class="form-group">
+                                <label>Category</label>
+                                <input type="text" value="\${item.category}" onchange="updatePortfolioItem(\${index}, 'category', this.value)">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Subtitle</label>
+                            <input type="text" value="\${item.subtitle}" onchange="updatePortfolioItem(\${index}, 'subtitle', this.value)">
+                        </div>
+                        <div class="form-group">
+                            <label>Image Path</label>
+                            <input type="text" value="\${item.image}" onchange="updatePortfolioItem(\${index}, 'image', this.value)">
+                        </div>
+                        <button class="btn btn-secondary" onclick="removePortfolioItem(\${index})">🗑️ Remove</button>
+                    \`;
+                    container.appendChild(itemDiv);
+                });
+            }
+        }
+
+        // Update functions
+        function updateService(index, field, value) {
+            if (!currentContent.services) currentContent.services = [];
+            if (!currentContent.services[index]) currentContent.services[index] = {};
+            currentContent.services[index][field] = value;
+        }
+
+        function updatePortfolioItem(index, field, value) {
+            if (!currentContent.portfolio) currentContent.portfolio = { featured: [] };
+            if (!currentContent.portfolio.featured[index]) currentContent.portfolio.featured[index] = {};
+            currentContent.portfolio.featured[index][field] = value;
+        }
+
+        function addNewService() {
+            if (!currentContent.services) currentContent.services = [];
+            currentContent.services.push({
+                id: 'new-service',
+                name: 'New Service',
+                icon: '📸',
+                description: 'Description of your new service',
+                featured: true
+            });
+            renderServices();
+        }
+
+        function addNewPortfolioItem() {
+            if (!currentContent.portfolio) currentContent.portfolio = { featured: [] };
+            currentContent.portfolio.featured.push({
+                id: Date.now().toString(),
+                title: 'New Portfolio Item',
+                subtitle: 'Description',
+                category: 'category',
+                image: 'images/portfolio/new-item.jpg',
+                alt: 'Alt text for SEO'
+            });
+            renderPortfolio();
+        }
+
+        function removeService(index) {
+            if (confirm('Are you sure you want to remove this service?')) {
+                currentContent.services.splice(index, 1);
+                renderServices();
+            }
+        }
+
+        function removePortfolioItem(index) {
+            if (confirm('Are you sure you want to remove this portfolio item?')) {
+                currentContent.portfolio.featured.splice(index, 1);
+                renderPortfolio();
+            }
+        }
+
+        // Save functions
+        function saveBasicInfo() {
+            if (!currentContent.site) currentContent.site = { contact: {} };
+            if (!currentContent.hero) currentContent.hero = {};
+            if (!currentContent.about) currentContent.about = {};
+
+            currentContent.site.title = document.getElementById('site-title').value;
+            currentContent.site.description = document.getElementById('site-description').value;
+            currentContent.site.contact.email = document.getElementById('contact-email').value;
+            currentContent.site.contact.phone = document.getElementById('contact-phone').value;
+            currentContent.hero.title = document.getElementById('hero-title').value;
+            currentContent.hero.subtitle = document.getElementById('hero-subtitle').value;
+            currentContent.about.content = document.getElementById('about-content').value.split('\\n\\n');
+
+            downloadJSON();
+            showMessage('Basic info updated! Download the file and replace content.json on your website.', 'success');
+        }
+
+        function saveServices() {
+            downloadJSON();
+            showMessage('Services updated! Download the file and replace content.json on your website.', 'success');
+        }
+
+        function savePortfolio() {
+            downloadJSON();
+            showMessage('Portfolio updated! Download the file and replace content.json on your website.', 'success');
+        }
+
+        function loadJSON() {
+            const jsonText = document.getElementById('json-editor').value;
+            try {
+                currentContent = JSON.parse(jsonText);
+                populateFields();
+                showMessage('JSON loaded successfully!', 'success');
+            } catch (error) {
+                showMessage('Invalid JSON format. Please check your syntax.', 'error');
+            }
+        }
+
+        function saveJSON() {
+            const jsonText = document.getElementById('json-editor').value;
+            try {
+                currentContent = JSON.parse(jsonText);
+                downloadJSON();
+                showMessage('JSON saved! Download the file and replace content.json on your website.', 'success');
+            } catch (error) {
+                showMessage('Invalid JSON format. Please check your syntax.', 'error');
+            }
+        }
+
+        function downloadJSON() {
+            const dataStr = JSON.stringify(currentContent, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'content.json';
+            link.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function showMessage(message, type) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = type === 'success' ? 'success-message' : 'warning-message';
+            messageDiv.textContent = message;
+            
+            const container = document.querySelector('.admin-container');
+            container.insertBefore(messageDiv, container.firstChild);
+            
+            setTimeout(() => {
+                messageDiv.remove();
+            }, 5000);
+        }
+
+        // Load content when page loads
+        document.addEventListener('DOMContentLoaded', loadContent);
+    </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+{
+  "site": {
+    "title": "Daniel Schacht Photography | Professional Photographer San Diego",
+    "subtitle": "Professional Photography in San Diego",
+    "description": "Professional photography in San Diego specializing in portraits, professional headshots, and graduation photography. Contact Daniel Schacht for your next photo session.",
+    "contact": {
+      "email": "danielschacht@proton.me",
+      "phone": "(619) 800-5329",
+      "location": "San Diego, CA"
+    },
+    "social": {
+      "instagram": "https://instagram.com/danielschachtphoto",
+      "facebook": "https://facebook.com/danielschachtphotography"
+    }
+  },
+  "hero": {
+    "title": "Professional Portrait & Graduation Photography",
+    "subtitle": "San Diego-based photographer specializing in portraits, professional headshots, and graduation photography. Capturing authentic moments with an artistic eye and professional touch.",
+    "cta_primary": "View Portfolio",
+    "cta_secondary": "Book Your Session"
+  },
+  "about": {
+    "title": "About Daniel Schacht",
+    "lead": "Working with Daniel Schacht for photography is a great choice because of his versatility, professionalism, and artistic eye.",
+    "content": [
+      "Daniel captures not just a scene, but a story. Known for his easygoing demeanor and strong attention to detail, he brings both technical skill and creative vision to every photography session.",
+      "Whether you need professional headshots for your career, beautiful family portraits, or memorable graduation photos, Daniel provides personalized portrait photography services throughout the San Diego area."
+    ],
+    "cta": "Ready to create something amazing?"
+  },
+  "services": [
+    {
+      "id": "portraits",
+      "name": "Portrait Photography",
+      "icon": "📸",
+      "description": "Capture your authentic self with professional portrait sessions. Perfect for personal branding, family photos, and artistic portraits.",
+      "featured": true
+    },
+    {
+      "id": "headshots",
+      "name": "Professional Headshots",
+      "icon": "👤",
+      "description": "Stand out with compelling professional headshots for LinkedIn, business profiles, and corporate use.",
+      "featured": true
+    },
+    {
+      "id": "graduation",
+      "name": "Graduation Photography",
+      "icon": "🎓",
+      "description": "Celebrate academic achievements with professional graduation photos that capture this milestone moment forever.",
+      "featured": true
+    }
+  ],
+  "portfolio": {
+    "featured": [
+      {
+        "id": "1",
+        "title": "Portrait Photography",
+        "subtitle": "Professional headshots and personal branding",
+        "category": "portraits",
+        "image": "images/portfolio/portrait-1.jpg",
+        "alt": "Professional portrait photography session in San Diego"
+      },
+      {
+        "id": "2",
+        "title": "Professional Headshots",
+        "subtitle": "Corporate and LinkedIn headshots",
+        "category": "headshots",
+        "image": "images/portfolio/headshot-1.jpg",
+        "alt": "Professional headshot photography San Diego"
+      },
+      {
+        "id": "3",
+        "title": "Graduation Photography", 
+        "subtitle": "Celebrating academic milestones",
+        "category": "graduation",
+        "image": "images/portfolio/graduation-1.jpg",
+        "alt": "Graduation photography San Diego"
+      },
+      {
+        "id": "4",
+        "title": "Creative Portraits",
+        "subtitle": "Artistic portrait photography",
+        "category": "portraits",
+        "image": "images/portfolio/portrait-2.jpg",
+        "alt": "Creative portrait photography San Diego"
+      },
+      {
+        "id": "5",
+        "title": "Family Portraits",
+        "subtitle": "Capturing family connections",
+        "category": "portraits",
+        "image": "images/portfolio/family-1.jpg",
+        "alt": "Family portrait photography San Diego"
+      },
+      {
+        "id": "6",
+        "title": "Senior Graduation",
+        "subtitle": "High school and college graduates",
+        "category": "graduation",
+        "image": "images/portfolio/senior-1.jpg",
+        "alt": "Senior graduation photography San Diego"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "name": "Sarah Johnson",
+      "text": "Daniel captured our family perfectly! His attention to detail and professionalism made the entire experience wonderful.",
+      "service": "Portrait Photography",
+      "rating": 5
+    },
+    {
+      "name": "Mike Chen",
+      "text": "Daniel's professional headshots were perfect for my LinkedIn profile. Great quality and fast turnaround!",
+      "service": "Professional Headshots",
+      "rating": 5
+    },
+    {
+      "name": "Jessica Martinez",
+      "text": "Amazing graduation photos! Daniel made the whole session fun and the results were better than I could have imagined.",
+      "service": "Graduation Photography",
+      "rating": 5
+    }
+  ],
+  "seo": {
+    "keywords": [
+      "San Diego photographer",
+      "portrait photography San Diego",
+      "professional headshots San Diego",
+      "graduation photography San Diego",
+      "family portrait photographer",
+      "LinkedIn headshots San Diego"
+    ],
+    "local_areas": [
+      "San Diego",
+      "La Jolla",
+      "Del Mar",
+      "Encinitas",
+      "Carlsbad",
+      "Oceanside",
+      "Chula Vista",
+      "Mission Valley"
+    ]
+  }
+}
