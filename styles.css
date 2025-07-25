@@ -120,26 +120,14 @@ p {
     height: 80px;
 }
 
-.nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.nav-logo .logo-image {
-    height: 24px;
-    width: auto;
-    object-fit: contain;
-}
-
-.nav-logo .logo-text h2 {
+.nav-logo h2 {
     font-family: var(--font-primary);
     font-size: 1.8rem;
     color: var(--text-dark);
     margin: 0;
 }
 
-.nav-logo .logo-text span {
+.nav-logo span {
     font-size: 0.9rem;
     color: var(--text-light);
     display: block;
