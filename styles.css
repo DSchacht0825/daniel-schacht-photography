@@ -31,7 +31,6 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     font-size: 16px;
-    padding-bottom: 80px; /* Space for sticky reviews bar */
 }
 
 /* Section Base Styles - Elementor/Divi Style */
@@ -92,57 +91,52 @@ section {
     border-radius: 2px;
 }
 
-/* Reviews Flowing Bar - Sticky at Bottom */
+/* Reviews Small Carousel Under Footer */
 .reviews-bar {
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
     border-top: 1px solid var(--border-color);
-    padding: 15px 0;
+    padding: 8px 0;
     overflow: hidden;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-top: 0;
 }
 
 .reviews-scroll {
     display: flex;
-    animation: scroll-reviews 45s linear infinite;
-    gap: 40px;
+    animation: scroll-reviews 60s linear infinite;
+    gap: 25px;
     white-space: nowrap;
 }
 
 .review-item {
     display: flex;
     align-items: center;
-    gap: 15px;
-    min-width: 400px;
-    padding: 15px 25px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    gap: 10px;
+    min-width: 300px;
+    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .review-item .stars {
-    font-size: 14px;
+    font-size: 12px;
     flex-shrink: 0;
 }
 
 .review-item .review-text {
-    font-size: 14px;
+    font-size: 12px;
     color: var(--text-dark);
     font-style: italic;
-    margin-right: 10px;
+    margin-right: 8px;
     overflow: hidden;
     text-overflow: ellipsis;
+    line-height: 1.3;
 }
 
 .review-item .review-author {
-    font-size: 12px;
+    font-size: 10px;
     color: var(--text-light);
     font-weight: 600;
     flex-shrink: 0;
@@ -164,50 +158,46 @@ section {
 
 /* Responsive Reviews Bar */
 @media (max-width: 768px) {
-    body {
-        padding-bottom: 70px; /* Adjust for smaller mobile bar */
-    }
-    
     .review-item {
-        min-width: 300px;
-        padding: 12px 20px;
-        gap: 12px;
+        min-width: 250px;
+        padding: 6px 12px;
+        gap: 8px;
     }
     
     .review-item .review-text {
-        font-size: 13px;
-    }
-    
-    .review-item .review-author {
         font-size: 11px;
     }
     
+    .review-item .review-author {
+        font-size: 9px;
+    }
+    
     .reviews-scroll {
-        gap: 30px;
-        animation-duration: 35s;
+        gap: 20px;
+        animation-duration: 50s;
     }
     
     .reviews-bar {
-        padding: 12px 0;
+        padding: 6px 0;
     }
 }
 
 @media (max-width: 480px) {
-    body {
-        padding-bottom: 60px; /* Even smaller for tiny screens */
-    }
-    
     .review-item {
-        min-width: 280px;
-        padding: 10px 15px;
+        min-width: 220px;
+        padding: 5px 10px;
     }
     
     .review-item .review-text {
-        font-size: 12px;
+        font-size: 10px;
+    }
+    
+    .review-item .review-author {
+        font-size: 8px;
     }
     
     .reviews-bar {
-        padding: 10px 0;
+        padding: 5px 0;
     }
 }
 
