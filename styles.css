@@ -12,13 +12,18 @@
     --text-dark: #2d3748;
     --text-light: #718096;
     --text-white: #ffffff;
-    --bg-light: #f7fafc;
+    --bg-light: #f8fafc;
     --bg-white: #ffffff;
+    --bg-section: #ffffff;
+    --bg-alt: #f8fafc;
     --border-color: #e2e8f0;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
     --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --shadow-section: 0 2px 4px rgba(0, 0, 0, 0.02);
     --font-primary: 'Raleway', sans-serif;
     --font-secondary: 'Inter', sans-serif;
+    --section-padding: 100px 0;
+    --section-padding-mobile: 60px 0;
 }
 
 body {
@@ -28,10 +33,62 @@ body {
     font-size: 16px;
 }
 
+/* Section Base Styles - Elementor/Divi Style */
+section {
+    position: relative;
+    overflow: hidden;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+/* Section Containers */
+.section-container {
+    padding: var(--section-padding);
+    position: relative;
+}
+
+.section-container.alt-bg {
+    background-color: var(--bg-alt);
+}
+
+.section-container.white-bg {
+    background-color: var(--bg-white);
+}
+
+/* Section Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.section-header p {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* Section Dividers */
+.section-divider {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    margin: 0 auto 30px;
+    border-radius: 2px;
 }
 
 /* Typography */
