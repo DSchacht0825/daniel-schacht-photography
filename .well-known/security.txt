@@ -1,0 +1,4 @@
+Contact: mailto:danielschacht@proton.me
+Expires: 2025-07-25T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://danielschachtphotography.com/.well-known/security.txt

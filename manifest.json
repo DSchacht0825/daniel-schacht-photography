@@ -1,0 +1,21 @@
+{
+  "name": "Daniel Schacht Photography",
+  "short_name": "DSPhoto",
+  "description": "Professional headshot photographer in San Diego",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2EA3F2",
+  "icons": [
+    {
+      "src": "/images/about/daniel-headshot.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/images/about/daniel-headshot.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

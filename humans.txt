@@ -1,0 +1,13 @@
+# Daniel Schacht Photography - humans.txt
+
+/* TEAM */
+Photographer: Daniel Schacht
+Contact: danielschacht@proton.me
+Instagram: @headshot_sandiego
+Location: San Diego, California
+
+/* SITE */
+Last update: 2024/07/25
+Language: English
+Doctype: HTML5
+IDE: Claude Code
