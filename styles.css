@@ -91,6 +91,108 @@ section {
     border-radius: 2px;
 }
 
+/* Reviews Flowing Bar */
+.reviews-bar {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.reviews-scroll {
+    display: flex;
+    animation: scroll-reviews 45s linear infinite;
+    gap: 40px;
+    white-space: nowrap;
+}
+
+.review-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 400px;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.review-item .stars {
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.review-item .review-text {
+    font-size: 14px;
+    color: var(--text-dark);
+    font-style: italic;
+    margin-right: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.review-item .review-author {
+    font-size: 12px;
+    color: var(--text-light);
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+@keyframes scroll-reviews {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause animation on hover */
+.reviews-bar:hover .reviews-scroll {
+    animation-play-state: paused;
+}
+
+/* Responsive Reviews Bar */
+@media (max-width: 768px) {
+    .review-item {
+        min-width: 300px;
+        padding: 12px 20px;
+        gap: 12px;
+    }
+    
+    .review-item .review-text {
+        font-size: 13px;
+    }
+    
+    .review-item .review-author {
+        font-size: 11px;
+    }
+    
+    .reviews-scroll {
+        gap: 30px;
+        animation-duration: 35s;
+    }
+}
+
+@media (max-width: 480px) {
+    .review-item {
+        min-width: 280px;
+        padding: 10px 15px;
+    }
+    
+    .review-item .review-text {
+        font-size: 12px;
+    }
+    
+    .reviews-bar {
+        padding: 15px 0;
+    }
+}
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-primary);
