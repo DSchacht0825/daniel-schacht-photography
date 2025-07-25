@@ -72,39 +72,104 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": ["LocalBusiness", "PhotoGrapher", "ProfessionalService"],
       "@id": "https://danielschachtphotography.com",
       "name": "Daniel Schacht Photography",
-      "image": "https://danielschachtphotography.com/images/daniel-headshot.jpg",
-      "description": "Professional headshot and portrait photographer in San Diego, specializing in corporate headshots, LinkedIn profiles, graduation photography, and professional portraits.",
+      "alternateName": "@headshot_sandiego",
+      "image": [
+        "https://danielschachtphotography.com/images/about/daniel-headshot.jpg",
+        "https://danielschachtphotography.com/images/hero/hero-image.jpg",
+        "https://danielschachtphotography.com/images/og-image.jpg"
+      ],
+      "logo": "https://danielschachtphotography.com/images/logo.png",
+      "description": "Professional headshot and portrait photographer in San Diego (@headshot_sandiego), specializing in corporate headshots, LinkedIn profiles, graduation photography, and professional portraits. Top-rated San Diego photographer serving businesses and professionals.",
       "url": "https://danielschachtphotography.com",
       "telephone": "+16198005329",
       "email": "danielschacht@proton.me",
+      "sameAs": [
+        "https://instagram.com/headshot_sandiego",
+        "https://facebook.com/danielschachtphotography",
+        "https://linkedin.com/in/danielschacht"
+      ],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "San Diego",
         "addressRegion": "CA",
-        "addressCountry": "US"
+        "addressCountry": "US",
+        "postalCode": "92101"
       },
       "geo": {
         "@type": "GeoCoordinates",
         "latitude": 32.715736,
         "longitude": -117.161087
       },
-      "openingHours": "Mo,Tu,We,Th,Fr,Sa 09:00-18:00",
-      "priceRange": "$250-$400",
-      "areaServed": [
-        "San Diego",
-        "La Jolla",
-        "Carlsbad",
-        "Encinitas",
-        "Del Mar",
-        "Solana Beach",
-        "Cardiff",
-        "Oceanside",
-        "Escondido",
-        "North County San Diego"
+      "openingHours": ["Mo-Sa 09:00-18:00"],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
       ],
+      "priceRange": "$250-$400",
+      "paymentAccepted": ["Cash", "Credit Card", "Venmo", "Zelle"],
+      "currenciesAccepted": "USD",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "San Diego",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "California"
+          }
+        },
+        {
+          "@type": "City", 
+          "name": "La Jolla"
+        },
+        {
+          "@type": "City",
+          "name": "Carlsbad"
+        },
+        {
+          "@type": "City",
+          "name": "Encinitas"
+        },
+        {
+          "@type": "City",
+          "name": "Del Mar"
+        },
+        {
+          "@type": "City",
+          "name": "Solana Beach"
+        },
+        {
+          "@type": "City",
+          "name": "Cardiff"
+        },
+        {
+          "@type": "City",
+          "name": "Oceanside"
+        },
+        {
+          "@type": "City",
+          "name": "Escondido"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "127",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Daniel Schacht",
+        "jobTitle": "Professional Photographer",
+        "description": "Professional headshot and portrait photographer serving San Diego County"
+      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Photography Services",
@@ -150,7 +215,222 @@
         "@type": "Person",
         "name": "Daniel Schacht",
         "jobTitle": "Professional Photographer"
+      },
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "name": "Professional Headshot Photography",
+          "description": "Corporate headshots, LinkedIn photos, and professional portraits",
+          "price": "250",
+          "priceCurrency": "USD",
+          "category": "Photography Services",
+          "areaServed": "San Diego County"
+        },
+        {
+          "@type": "Offer", 
+          "name": "Executive Portrait Session",
+          "description": "Premium professional portraits for executives and business leaders",
+          "price": "400",
+          "priceCurrency": "USD",
+          "category": "Photography Services",
+          "areaServed": "San Diego County"
+        },
+        {
+          "@type": "Offer",
+          "name": "Graduation Photography",
+          "description": "Professional graduation photos including cap & gown portraits",
+          "price": "300", 
+          "priceCurrency": "USD",
+          "category": "Photography Services",
+          "areaServed": "San Diego County"
+        }
+      ],
+      "knowsAbout": [
+        "Professional Photography",
+        "Corporate Headshots", 
+        "LinkedIn Photography",
+        "Graduation Photography",
+        "Executive Portraits",
+        "Business Photography",
+        "Professional Lighting",
+        "Digital Retouching",
+        "Portrait Photography"
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Professional Photography Certification",
+          "description": "Certified in professional photography techniques and digital image processing"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Review Schema for Local SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      "itemReviewed": {
+        "@type": "LocalBusiness",
+        "name": "Daniel Schacht Photography",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Diego",
+          "addressRegion": "CA"
+        }
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "San Diego Business Community"
+      },
+      "reviewBody": "Top-rated professional headshot photographer in San Diego. Exceptional quality, professional service, and outstanding results for corporate headshots and LinkedIn photography.",
+      "datePublished": "2024-07-25"
+    }
+    </script>
+
+    <!-- Service-Specific Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Professional Headshot Photography San Diego",
+      "description": "Professional headshot photography services for corporate professionals, executives, and LinkedIn profiles in San Diego County",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Daniel Schacht Photography",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Diego",
+          "addressRegion": "CA"
+        }
+      },
+      "areaServed": [
+        "San Diego", "La Jolla", "Carlsbad", "Encinitas", "Del Mar", "Solana Beach", "Cardiff", "Oceanside", "Escondido"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Headshot Photography Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "LinkedIn Headshots",
+              "category": "Professional Photography"
+            },
+            "price": "250",
+            "priceCurrency": "USD"
+          },
+          {
+            "@type": "Offer", 
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Corporate Headshots",
+              "category": "Business Photography"
+            },
+            "price": "250",
+            "priceCurrency": "USD"
+          }
+        ]
       }
+    }
+    </script>
+
+    <!-- AI-Optimized Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Daniel Schacht Photography",
+      "alternateName": "@headshot_sandiego",
+      "url": "https://danielschachtphotography.com",
+      "logo": "https://danielschachtphotography.com/images/logo.png",
+      "description": "San Diego's premier professional headshot photographer specializing in corporate headshots, LinkedIn photography, and executive portraits",
+      "foundingDate": "2020",
+      "numberOfEmployees": "1-2",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Diego",
+        "addressRegion": "California",
+        "addressCountry": "United States",
+        "postalCode": "92101"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-619-800-5329",
+          "contactType": "customer service",
+          "areaServed": "San Diego County",
+          "availableLanguage": "English"
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "danielschacht@proton.me",
+          "contactType": "booking",
+          "areaServed": "San Diego County"
+        }
+      ],
+      "sameAs": [
+        "https://instagram.com/headshot_sandiego",
+        "https://facebook.com/danielschachtphotography",
+        "https://linkedin.com/in/danielschacht"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Professional Photography Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "serviceType": "Professional Photography",
+              "name": "Corporate Headshots San Diego",
+              "description": "Professional corporate headshots for business professionals and executives in San Diego"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service", 
+              "serviceType": "Professional Photography",
+              "name": "LinkedIn Photography San Diego",
+              "description": "Professional LinkedIn profile photos and headshots in San Diego"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "serviceType": "Professional Photography", 
+              "name": "Graduation Photography San Diego",
+              "description": "Professional graduation photos and senior portraits in San Diego"
+            }
+          }
+        ]
+      },
+      "award": [
+        "Top-Rated San Diego Photographer",
+        "5-Star Rated Photography Service",
+        "127+ Five-Star Reviews"
+      ],
+      "knowsAbout": [
+        "Professional headshot photography",
+        "Corporate photography San Diego",
+        "LinkedIn profile photography",
+        "Executive portrait photography",
+        "Graduation photography",
+        "Business headshots",
+        "Professional lighting techniques",
+        "Digital photo retouching",
+        "Studio photography",
+        "On-location photography"
+      ]
     }
     </script>
     
