@@ -5,9 +5,17 @@
         display: flex !important;
         flex-direction: column;
         cursor: pointer;
-        padding: 5px;
+        padding: 10px;
         z-index: 1001;
         position: relative;
+        min-width: 44px;
+        min-height: 44px;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        border: none;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
     }
     
     .hamburger span {
@@ -17,6 +25,7 @@
         margin: 3px 0;
         transition: 0.3s;
         display: block;
+        border-radius: 2px;
     }
     
     /* Hamburger animation when active */
@@ -42,12 +51,14 @@
         backdrop-filter: blur(20px);
         width: 100% !important;
         text-align: center !important;
-        transition: 0.3s !important;
+        transition: left 0.3s ease-in-out !important;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
         padding: 2rem 0 !important;
         z-index: 1000 !important;
         height: calc(100vh - 70px);
         overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        transform: translateZ(0); /* Force hardware acceleration */
     }
     
     .nav-menu.active {
