@@ -448,8 +448,9 @@ img {
         transform: translateZ(0) !important; /* Force hardware acceleration */
     }
     
-    /* Specific positioning for first portfolio image to show head properly */
-    .portfolio-item:first-child img {
+    /* Specific positioning for portfolio images to show heads properly */
+    .portfolio-item:first-child img,
+    .portfolio-item:nth-child(5) img {
         object-position: center top !important;
     }
     
@@ -617,8 +618,9 @@ img {
         object-position: center !important;
     }
     
-    /* Specific positioning for first portfolio image on small screens */
-    .portfolio-item:first-child img {
+    /* Specific positioning for portfolio images on small screens */
+    .portfolio-item:first-child img,
+    .portfolio-item:nth-child(5) img {
         object-position: center top !important;
     }
     
