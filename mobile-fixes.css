@@ -1,3 +1,26 @@
+/* Performance optimizations for all devices */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optimize images for better loading */
+img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+    -ms-interpolation-mode: bicubic;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
 /* Ensure mobile menu is hidden on desktop and fix navigation colors */
 @media (min-width: 769px) {
     .mobile-nav-menu {
@@ -506,6 +529,39 @@
     /* Container padding mobile */
     .container {
         padding: 0 15px !important;
+    }
+    
+    /* Performance optimizations for mobile */
+    body {
+        -webkit-overflow-scrolling: touch !important;
+        overflow-x: hidden !important;
+    }
+    
+    /* Optimize background images for mobile performance */
+    .hero::before,
+    .services::before,
+    .about::before,
+    .portfolio::before,
+    .contact::before,
+    .pricing::before,
+    .footer::before {
+        background-attachment: scroll !important; /* Disable parallax on mobile */
+        will-change: auto !important;
+        transform: none !important;
+    }
+    
+    /* Reduce expensive effects on mobile */
+    .service-card:hover,
+    .pricing-card:hover {
+        transform: none !important;
+        box-shadow: var(--shadow) !important;
+    }
+    
+    /* Optimize animations for mobile */
+    .fade-in,
+    .slide-in-left,
+    .slide-in-right {
+        transition-duration: 0.3s !important;
     }
     
     /* Button improvements */

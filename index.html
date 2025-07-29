@@ -1093,11 +1093,22 @@
     }
     </script>
     
+    <!-- Resource hints for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="images/portfolio/photo-5.jpg" as="image">
+    <link rel="preload" href="script.min.js" as="script">
+    
+    <!-- Font loading with fallback -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="styles.min.css">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"></noscript>
+    
+    <!-- Critical CSS -->
+    <noscript><link rel="stylesheet" href="styles.min.css"></noscript>
     <link rel="stylesheet" href="mobile-fixes.css">
 </head>
 <body>
