@@ -1,0 +1,350 @@
+/* Mobile Navigation Improvements */
+@media (max-width: 768px) {
+    /* Fix hamburger positioning and styling */
+    .hamburger {
+        display: flex !important;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 5px;
+        z-index: 1001;
+        position: relative;
+    }
+    
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: var(--text-dark);
+        margin: 3px 0;
+        transition: 0.3s;
+        display: block;
+    }
+    
+    /* Hamburger animation when active */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
+    /* Mobile menu styling */
+    .nav-menu {
+        position: fixed !important;
+        left: -100% !important;
+        top: 70px !important;
+        flex-direction: column !important;
+        background-color: rgba(13, 13, 13, 0.98) !important;
+        backdrop-filter: blur(20px);
+        width: 100% !important;
+        text-align: center !important;
+        transition: 0.3s !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+        padding: 2rem 0 !important;
+        z-index: 1000 !important;
+        height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+    
+    .nav-menu.active {
+        left: 0 !important;
+    }
+    
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+    
+    .nav-menu a {
+        font-size: 1.1rem !important;
+        padding: 1rem !important;
+        display: block !important;
+        color: var(--text-dark) !important;
+    }
+    
+    /* Navigation container mobile adjustments */
+    .nav-container {
+        padding: 0 20px !important;
+        height: 70px !important;
+    }
+    
+    .nav-left, .nav-right {
+        display: none !important;
+    }
+    
+    .nav-logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    /* Action bar mobile improvements */
+    .action-bar-content {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+        gap: 1rem !important;
+    }
+    
+    .action-left, .action-right {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+        justify-content: center !important;
+    }
+    
+    .action-btn {
+        font-size: 0.6rem !important;
+        padding: 0.5rem !important;
+        min-width: 80px !important;
+        line-height: 1.1 !important;
+    }
+    
+    /* Contact form mobile improvements */
+    .contact-content {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    .contact-form {
+        padding: 2rem !important;
+        margin-top: 2rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px !important; /* Prevents zoom on iOS */
+        padding: 14px 16px !important;
+    }
+    
+    /* Contact items mobile layout */
+    .contact-item {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 0.5rem !important;
+        align-items: center !important;
+    }
+    
+    .contact-icon {
+        font-size: 2rem !important;
+    }
+    
+    /* Footer mobile improvements */
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+        gap: 2rem !important;
+    }
+    
+    .social-links {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+        align-items: center !important;
+    }
+    
+    .social-link {
+        width: 200px !important;
+        justify-content: center !important;
+        padding: 0.75rem !important;
+    }
+    
+    /* Services grid mobile */
+    .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    .service-card {
+        padding: 2rem !important;
+    }
+    
+    /* Portfolio grid mobile */
+    .portfolio-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .portfolio-item img {
+        height: 250px !important;
+    }
+    
+    /* Pricing cards mobile */
+    .pricing-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        margin: 3rem 0 !important;
+    }
+    
+    .pricing-card.featured {
+        transform: none !important; /* Remove scaling on mobile */
+    }
+    
+    /* Hero section mobile */
+    .hero-container {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+        gap: 3rem !important;
+        padding: 0 20px !important;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem !important;
+        max-width: 100% !important;
+    }
+    
+    .hero-buttons {
+        justify-content: center !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    .hero-image img {
+        height: 400px !important;
+        max-width: 300px !important;
+    }
+    
+    /* About section mobile */
+    .about-content {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        text-align: center !important;
+    }
+    
+    .about-image img {
+        height: 400px !important;
+    }
+    
+    /* Section headers mobile */
+    .section-header h1,
+    .section-header h2 {
+        font-size: 2rem !important;
+    }
+    
+    .section-header p {
+        font-size: 1rem !important;
+    }
+    
+    /* Container padding mobile */
+    .container {
+        padding: 0 15px !important;
+    }
+    
+    /* Button improvements */
+    .btn {
+        width: 100% !important;
+        text-align: center !important;
+        padding: 14px 20px !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem !important;
+    }
+    
+    .nav-logo h2 {
+        font-size: 1.3rem !important;
+    }
+    
+    .nav-logo span {
+        font-size: 0.7rem !important;
+    }
+    
+    .contact-form {
+        padding: 1.5rem !important;
+    }
+    
+    .service-card {
+        padding: 1.5rem !important;
+    }
+    
+    .service-icon {
+        font-size: 2rem !important;
+    }
+    
+    .portfolio-item img {
+        height: 200px !important;
+    }
+    
+    .hero-image img {
+        max-width: 250px !important;
+        height: 350px !important;
+    }
+    
+    .testimonial-card {
+        min-width: 280px !important;
+        max-width: 280px !important;
+        padding: 1.5rem !important;
+    }
+    
+    .footer {
+        padding: 2rem 0 !important;
+    }
+    
+    .social-link {
+        width: 180px !important;
+        font-size: 0.8rem !important;
+    }
+}
+
+/* Touch improvements */
+@media (hover: none) and (pointer: coarse) {
+    /* Remove hover effects on touch devices */
+    .service-card:hover,
+    .portfolio-item:hover,
+    .pricing-card:hover {
+        transform: none !important;
+    }
+    
+    /* Make touch targets larger */
+    .nav-menu a {
+        min-height: 44px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .btn {
+        min-height: 44px !important;
+    }
+    
+    .hamburger {
+        min-width: 44px !important;
+        min-height: 44px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+}
+
+/* Fix form elements on iOS */
+@supports (-webkit-appearance: none) {
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        -webkit-appearance: none;
+        border-radius: 8px !important;
+    }
+    
+    .form-group select {
+        background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='%23666' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 12px;
+        padding-right: 40px !important;
+    }
+}

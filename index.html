@@ -1095,8 +1095,10 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="styles.min.css">
+    <link rel="stylesheet" href="mobile-fixes.css">
 </head>
 <body>
     <!-- AI-Optimized Business Summary (Hidden) -->
@@ -1138,17 +1140,19 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
+            <ul class="nav-menu nav-left">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+            </ul>
             <div class="nav-logo">
                 <h2>Daniel Schacht</h2>
                 <span>Photography</span>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul class="nav-menu nav-right">
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -1163,15 +1167,15 @@
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    ★★★★★ San Diego Headshot & Portrait Photographer | 
-                    <span class="highlight">Affordable Studio Photography Sessions</span>
+                    Professional <span class="highlight">Headshots</span> & 
+                    Portrait Photography
                 </h1>
                 <p class="hero-subtitle">
-                    Daniel Schacht Photography (@headshot_sandiego) - Professional photographer serving San Diego County with 127+ five-star reviews. Specializing in headshots, corporate photography, LinkedIn profiles, graduation portraits, and executive photography. Transparent pricing starting at $250. Serving La Jolla, Carlsbad, Encinitas & North County. Follow @headshot_sandiego for portfolio examples and client testimonials.
+                    Based in San Diego, specializing in creating authentic professional headshots for LinkedIn, corporate needs, and personal branding. Clean, timeless photography that captures your best self.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
-                    <a href="#contact" class="btn btn-secondary">Let's Work Together</a>
+                    <a href="portfolio.html" class="btn btn-primary">View Work</a>
+                    <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -1184,393 +1188,86 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="section-container alt-bg">
-            <div class="container">
-                <div class="section-header fade-in">
-                    <h2>San Diego Photo Studio & Portrait Photography Services</h2>
-                    <div class="section-divider"></div>
-                    <p>Affordable studio headshots and portrait photography services trusted by 127+ clients throughout San Diego, La Jolla, Carlsbad, Encinitas, and North County. Professional photo studio with controlled lighting for the best results.</p>
-                </div>
-            <div class="services-grid">
-                <div class="service-card fade-in stagger-1">
-                    <div class="service-icon">📸</div>
-                    <h3>Professional Portrait Photography San Diego</h3>
-                    <p>Capture your authentic self with professional portrait sessions in San Diego. Perfect for personal branding, family photos, executive portraits, and artistic photography throughout North County.</p>
-                </div>
-                <div class="service-card fade-in stagger-2">
-                    <div class="service-icon">👤</div>
-                    <h3>Studio Headshots & LinkedIn Photography</h3>
-                    <p>Professional studio headshots with controlled lighting for LinkedIn, business profiles, and corporate use. Affordable photography sessions serving executives, entrepreneurs, and professionals throughout San Diego County.</p>
-                </div>
-                <div class="service-card fade-in stagger-3">
-                    <div class="service-icon">🎓</div>
-                    <h3>San Diego Graduation Photography</h3>
-                    <p>Celebrate academic achievements with professional graduation photos in San Diego. Specializing in high school and college graduation portraits that capture this milestone moment forever.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="section-container white-bg">
-            <div class="container">
-                <div class="section-header">
-                    <h2>About Daniel Schacht</h2>
-                    <div class="section-divider"></div>
-                    <p>Professional headshot photographer serving San Diego County</p>
-                </div>
-                <div class="about-content">
-                    <div class="about-text slide-in-left">
-                    <p class="lead">
-                        Working with Daniel Schacht for professional headshots and portrait photography in San Diego is a great choice because of his versatility, 
-                        professionalism, and artistic eye.
-                    </p>
-                    <p>
-                        As a top-rated San Diego headshot photographer, Daniel captures not just a scene, but a story. Known for his easygoing demeanor and 
-                        strong attention to detail, he brings both technical skill and creative vision to every 
-                        photography session throughout La Jolla, Carlsbad, Encinitas, and North County San Diego.
-                    </p>
-                    <p>
-                        Whether you need professional headshots for LinkedIn, corporate photography for your business, beautiful family portraits, 
-                        or memorable graduation photos, Daniel provides personalized portrait photography services 
-                        throughout the San Diego area with competitive pricing and exceptional quality.
-                    </p>
-                    <div class="about-contact">
-                        <h4>Ready to create something amazing?</h4>
-                        <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    </div>
-                </div>
-                <div class="about-image slide-in-right">
-                    <img src="images/about/daniel-headshot.jpg" alt="Daniel Schacht professional photographer headshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder" style="display: none;">
-                        <div class="placeholder-text">About Photo</div>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Preview -->
-    <section id="portfolio" class="portfolio">
-        <div class="section-container alt-bg">
-            <div class="container">
-                <div class="section-header fade-in">
-                    <h2>Portfolio</h2>
-                    <div class="section-divider"></div>
-                    <p>A selection of recent professional headshots, corporate photography, and portrait work throughout San Diego County</p>
-                </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item scale-in" data-category="portraits">
-                    <img src="images/portfolio/portrait-1.jpg" alt="Professional headshot and portrait photography in San Diego by Daniel Schacht Photography" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder" style="display: none;">
-                        <div class="placeholder-text">Portrait Work</div>
-                    </div>
-                    <div class="portfolio-overlay">
-                        <h4>Portrait Photography</h4>
-                        <p>Professional headshots and personal branding</p>
-                    </div>
-                </div>
-                <div class="portfolio-item scale-in" data-category="headshots">
-                    <img src="images/portfolio/headshot-1.jpg" alt="Corporate headshots and LinkedIn photography in San Diego - professional business headshots" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder" style="display: none;">
-                        <div class="placeholder-text">Professional Headshots</div>
-                    </div>
-                    <div class="portfolio-overlay">
-                        <h4>Professional Headshots</h4>
-                        <p>Corporate and LinkedIn headshots</p>
-                    </div>
-                </div>
-                <div class="portfolio-item scale-in" data-category="graduation">
-                    <img src="images/portfolio/graduation-1.jpg" alt="San Diego graduation photography - high school and college senior portraits" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder" style="display: none;">
-                        <div class="placeholder-text">Graduation</div>
-                    </div>
-                    <div class="portfolio-overlay">
-                        <h4>Graduation Photography</h4>
-                        <p>Celebrating academic milestones</p>
-                    </div>
-                </div>
-                <div class="portfolio-item scale-in" data-category="portraits">
-                    <img src="images/portfolio/portrait-2.jpg" alt="Creative professional portraits and executive headshots in San Diego" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder" style="display: none;">
-                        <div class="placeholder-text">Creative Portraits</div>
-                    </div>
-                    <div class="portfolio-overlay">
-                        <h4>Creative Portraits</h4>
-                        <p>Artistic portrait photography</p>
-                    </div>
-                </div>
-                <div class="portfolio-item scale-in" data-category="portraits">
-                    <img src="images/portfolio/family-1.jpg" alt="Family portrait photography and group headshots in San Diego County" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder" style="display: none;">
-                        <div class="placeholder-text">Family Portraits</div>
-                    </div>
-                    <div class="portfolio-overlay">
-                        <h4>Family Portraits</h4>
-                        <p>Capturing family connections</p>
-                    </div>
-                </div>
-                <div class="portfolio-item scale-in" data-category="graduation">
-                    <img src="images/portfolio/senior-1.jpg" alt="Senior graduation portraits and cap and gown photography in San Diego" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder" style="display: none;">
-                        <div class="placeholder-text">Senior Graduation</div>
-                    </div>
-                    <div class="portfolio-overlay">
-                        <h4>Senior Graduation</h4>
-                        <p>High school and college graduates</p>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-        <div class="section-container white-bg">
-            <div class="container">
-                <div class="section-header fade-in">
-                    <h2>Affordable San Diego Photography Sessions - Transparent Pricing</h2>
-                    <div class="section-divider"></div>
-                    <p>Affordable professional headshot and portrait photography services in San Diego. Transparent studio photography pricing starting at just $250 - no hidden fees!</p>
-                </div>
-            <div class="pricing-grid">
-                <div class="pricing-card fade-in stagger-1">
-                    <div class="pricing-header">
-                        <h3>Essential Studio Headshots</h3>
-                        <div class="price">
-                            <span class="currency">$</span>
-                            <span class="amount">250</span>
-                        </div>
-                        <p>Affordable studio headshots perfect for LinkedIn & professional use</p>
-                    </div>
-                    <ul class="pricing-features">
-                        <li>✓ 30-minute session</li>
-                        <li>✓ 2 outfit changes</li>
-                        <li>✓ 1 professionally retouched image</li>
-                        <li>✓ High-resolution digital file</li>
-                        <li>✓ Online gallery access</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary">Book Session</a>
-                </div>
-                
-                <div class="pricing-card featured fade-in stagger-2">
-                    <div class="popular-badge">Most Popular</div>
-                    <div class="pricing-header">
-                        <h3>Professional Portfolio</h3>
-                        <div class="price">
-                            <span class="currency">$</span>
-                            <span class="amount">400</span>
-                        </div>
-                        <p>Complete professional image collection</p>
-                    </div>
-                    <ul class="pricing-features">
-                        <li>✓ 60-minute session</li>
-                        <li>✓ Unlimited outfit changes</li>
-                        <li>✓ 5 professionally retouched images</li>
-                        <li>✓ All high-resolution digital files</li>
-                        <li>✓ Online gallery with download</li>
-                        <li>✓ Print release included</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary">Book Session</a>
-                </div>
-                
-                <div class="pricing-card fade-in stagger-3">
-                    <div class="pricing-header">
-                        <h3>Graduation Special</h3>
-                        <div class="price">
-                            <span class="currency">$</span>
-                            <span class="amount">300</span>
-                        </div>
-                        <p>Celebrate your academic achievement</p>
-                    </div>
-                    <ul class="pricing-features">
-                        <li>✓ 45-minute session</li>
-                        <li>✓ 3 outfit changes</li>
-                        <li>✓ 3 professionally retouched images</li>
-                        <li>✓ Cap & gown + casual photos</li>
-                        <li>✓ High-resolution digital files</li>
-                        <li>✓ Family group shot included</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary">Book Session</a>
-                </div>
-            </div>
-            
-            <div class="pricing-notes fade-in">
-                <p><strong>Additional Services:</strong></p>
-                <ul>
-                    <li>On-location sessions: +$150 travel fee</li>
-                    <li>Additional retouched images: $50 each</li>
-                    <li>Rush delivery (24 hours): +$100</li>
-                    <li>Group sessions (3+ people): Contact for custom pricing</li>
-                </ul>
-            </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="section-container alt-bg">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Contact</h2>
-                    <div class="section-divider"></div>
-                    <p>Ready to book your professional headshots in San Diego? Get in touch to discuss your photography needs.</p>
-                </div>
-                <div class="contact-content">
-                    <div class="contact-info slide-in-left">
-                        <p>Serving La Jolla, Carlsbad, Encinitas, and all of North County San Diego.</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">📍</div>
-                            <div>
-                                <h4>Location</h4>
-                                <p>San Diego, CA</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">📞</div>
-                            <div>
-                                <h4>Phone</h4>
-                                <p><a href="tel:+16198005329" class="contact-link">(619) 800-5329</a></p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">✉️</div>
-                            <div>
-                                <h4>Email</h4>
-                                <p><a href="mailto:danielschacht@proton.me" class="contact-link">danielschacht@proton.me</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-form slide-in-right">
-                    <form action="mailto:danielschacht@proton.me" method="post" enctype="text/plain">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Photography Service</label>
-                            <select id="service" name="service">
-                                <option value="">Select a service</option>
-                                <option value="portrait">Portrait Photography</option>
-                                <option value="headshots">Professional Headshots</option>
-                                <option value="graduation">Graduation Photography</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your photography needs..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-                    </form>
-                </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Daniel Schacht Photography</h3>
-                    <p>Professional photography services in San Diego, California</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/profile.php?id=100088176460873" target="_blank" rel="noopener" class="social-link">
-                            <svg viewBox="0 0 24 24" width="24" height="24">
-                                <path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                            <span>Facebook</span>
-                        </a>
-                        <a href="https://www.instagram.com/headshot_sandiego/" target="_blank" rel="noopener" class="social-link">
-                            <svg viewBox="0 0 24 24" width="24" height="24">
-                                <path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg>
-                            <span>Instagram</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/daniel-schacht-b9034924/" target="_blank" rel="noopener" class="social-link">
-                            <svg viewBox="0 0 24 24" width="24" height="24">
-                                <path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                            </svg>
-                            <span>LinkedIn</span>
-                        </a>
+                <!-- Left Column - Navigation Links -->
+                <div class="footer-left">
+                    <h4>Navigation</h4>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Center Column - Logo & Contact Info -->
+                <div class="footer-center">
+                    <h3>Daniel Schacht</h3>
+                    <p class="tagline">Photography</p>
+                    <div class="footer-contact-info">
+                        <p><a href="tel:+16198005329" class="footer-link">(619) 800-5329</a></p>
+                        <p><a href="mailto:danielschacht@proton.me" class="footer-link">danielschacht@proton.me</a></p>
+                        <p>San Diego, California</p>
+                        <p>&copy; 2024 All rights reserved.</p>
                     </div>
                 </div>
-                <div class="footer-contact">
-                    <p>&copy; 2024 Daniel Schacht Photography. All rights reserved.</p>
-                    <p>Phone: <a href="tel:+16198005329" class="footer-link">(619) 800-5329</a> | Email: <a href="mailto:danielschacht@proton.me" class="footer-link">danielschacht@proton.me</a></p>
+
+                <!-- Right Column - Social Media -->
+                <div class="footer-right">
+                    <h4>Follow</h4>
+                    <div class="footer-social">
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/profile.php?id=100088176460873" target="_blank" rel="noopener" class="social-link">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="https://www.instagram.com/headshot_sandiego/" target="_blank" rel="noopener" class="social-link">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.90-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.40z"/>
+                                </svg>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/daniel-schacht-b9034924/" target="_blank" rel="noopener" class="social-link">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Thin Reviews Strip at Bottom -->
-    <section class="reviews-bar">
-        <div class="reviews-scroll">
-            <div class="review-item">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <span class="review-text">"Daniel captured our family perfectly! Professional and wonderful experience."</span>
-                <span class="review-author">- Sarah Johnson</span>
-            </div>
-            <div class="review-item">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <span class="review-text">"Amazing graduation photos! Made the session fun and results were incredible."</span>
-                <span class="review-author">- Jessica Martinez</span>
-            </div>
-            <div class="review-item">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <span class="review-text">"Perfect LinkedIn headshots. Great quality and fast turnaround."</span>
-                <span class="review-author">- Mike Chen</span>
-            </div>
-            <div class="review-item">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <span class="review-text">"Incredible eye for authentic moments. Creative vision shows in final photos."</span>
-                <span class="review-author">- Emily Rodriguez</span>
-            </div>
-            <div class="review-item">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <span class="review-text">"Amazing patience with our toddler. Beautiful family moments we'll treasure forever."</span>
-                <span class="review-author">- David & Lisa Park</span>
-            </div>
-            <div class="review-item">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <span class="review-text">"Professional and creative. Graduation photos captured the milestone perfectly."</span>
-                <span class="review-author">- Maria Gonzalez</span>
-            </div>
-            <!-- Duplicate for seamless loop -->
-            <div class="review-item">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <span class="review-text">"Daniel captured our family perfectly! Professional and wonderful experience."</span>
-                <span class="review-author">- Sarah Johnson</span>
-            </div>
-            <div class="review-item">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <span class="review-text">"Amazing graduation photos! Made the session fun and results were incredible."</span>
-                <span class="review-author">- Jessica Martinez</span>
-            </div>
-            <div class="review-item">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <span class="review-text">"Perfect LinkedIn headshots. Great quality and fast turnaround."</span>
-                <span class="review-author">- Mike Chen</span>
+    <!-- Action Bar Section -->
+    <section class="action-bar">
+        <div class="container">
+            <div class="action-bar-content">
+                <div class="action-left">
+                    <a href="contact.html" class="action-btn">SCHEDULE ZOOM<br>CONSULTATION</a>
+                    <a href="contact.html" class="action-btn">SCHEDULE A<br>PHOTOSHOOT</a>
+                </div>
+                <div class="copyright-text">
+                    COPYRIGHT DANIEL SCHACHT PHOTOGRAPHY 2025
+                </div>
+                <div class="action-right">
+                    <a href="mailto:danielschacht@proton.me" class="action-btn">SEND DANIEL<br>AN EMAIL</a>
+                    <a href="sms:+16198005329" class="action-btn">SEND DANIEL A<br>TEXT MESSAGE</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <script src="script.min.js"></script>
 </body>
 </html>

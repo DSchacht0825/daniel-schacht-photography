@@ -49,12 +49,57 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Enhanced scroll effects are handled below
 
-    // Basic portfolio setup (enhanced hover effects are below)
+    // Portfolio filtering functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    if (filterButtons.length > 0 && portfolioItems.length > 0) {
+        console.log('Portfolio filter initialized with', filterButtons.length, 'buttons and', portfolioItems.length, 'items');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const filter = this.getAttribute('data-filter');
+                console.log('Filter clicked:', filter);
+                
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filter portfolio items
+                portfolioItems.forEach(item => {
+                    const category = item.getAttribute('data-category');
+                    console.log('Item category:', category, 'Filter:', filter);
+                    
+                    if (filter === 'all' || category === filter) {
+                        item.style.display = 'block';
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+        
+        // Initialize - show all items
+        portfolioItems.forEach(item => {
+            item.style.display = 'block';
+            item.style.opacity = '1';
+            item.style.transform = 'scale(1)';
+        });
+    } else {
+        console.log('Portfolio filter not initialized - buttons:', filterButtons.length, 'items:', portfolioItems.length);
+    }
 
     // Enhanced scroll animations
     const observerOptions = {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.1,
+        rootMargin: '0px 0px -10px 0px'
     };
 
     const scrollObserver = new IntersectionObserver(function(entries) {
@@ -65,10 +110,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observe all animation elements
+    // Observe all animation elements and make them visible immediately if no scroll animations
     document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in').forEach(el => {
+        // Add visible class immediately for elements above the fold
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+            el.classList.add('visible');
+        }
         scrollObserver.observe(el);
     });
+
+    // Safety fallback: make all elements visible after 2 seconds if they're still hidden
+    setTimeout(() => {
+        document.querySelectorAll('.fade-in:not(.visible), .slide-in-left:not(.visible), .slide-in-right:not(.visible), .scale-in:not(.visible)').forEach(el => {
+            el.classList.add('visible');
+        });
+    }, 2000);
 
     // Enhanced portfolio hover effects
     const portfolioItems = document.querySelectorAll('.portfolio-item');
