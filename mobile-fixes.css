@@ -490,7 +490,7 @@ img {
     
     /* Adjust pricing section background image to show face better on mobile */
     .pricing::before {
-        background-position: 60% center !important;
+        background-position: 40% center !important;
     }
     
     /* Hero section mobile */
