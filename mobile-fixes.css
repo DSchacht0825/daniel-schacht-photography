@@ -41,12 +41,16 @@
         transform: rotate(45deg) translate(-5px, -6px);
     }
     
-    /* Mobile menu styling */
+    /* Hide desktop nav menus on mobile */
     .nav-menu {
+        display: none !important;
+    }
+    
+    /* Mobile menu styling */
+    .mobile-nav-menu {
         position: fixed !important;
         left: -100% !important;
         top: 70px !important;
-        flex-direction: column !important;
         background-color: rgba(13, 13, 13, 0.98) !important;
         backdrop-filter: blur(20px);
         width: 100% !important;
@@ -61,19 +65,47 @@
         transform: translateZ(0); /* Force hardware acceleration */
     }
     
-    .nav-menu.active {
+    .mobile-nav-menu.active {
         left: 0 !important;
     }
     
-    .nav-menu li {
-        margin: 1rem 0;
+    .mobile-nav-menu ul {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0 !important;
     }
     
-    .nav-menu a {
+    .mobile-nav-menu li {
+        margin: 1rem 0 !important;
+        width: 100% !important;
+        max-width: 300px !important;
+    }
+    
+    .mobile-nav-menu a {
         font-size: 1.1rem !important;
-        padding: 1rem !important;
+        padding: 1rem 2rem !important;
         display: block !important;
-        color: var(--text-dark) !important;
+        color: white !important;
+        text-decoration: none !important;
+        border-radius: 8px !important;
+        transition: all 0.3s ease !important;
+        font-weight: 500 !important;
+        min-height: 44px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border: 2px solid transparent !important;
+    }
+    
+    .mobile-nav-menu a:hover,
+    .mobile-nav-menu a.active {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        border-color: rgba(255, 255, 255, 0.2) !important;
+        transform: translateY(-2px) !important;
     }
     
     /* Navigation container mobile adjustments */
