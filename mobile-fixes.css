@@ -711,3 +711,12 @@ img {
     }
 }
 
+/* Mobile-only pricing background positioning - placed at end for highest specificity */
+@media (max-width: 768px) {
+    html body section.pricing::before,
+    html body .pricing.page-section::before,
+    html body .pricing::before {
+        background-position: left center !important;
+    }
+}
+
