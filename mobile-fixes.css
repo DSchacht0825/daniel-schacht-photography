@@ -1,3 +1,32 @@
+/* Ensure mobile menu is hidden on desktop and fix navigation colors */
+@media (min-width: 769px) {
+    .mobile-nav-menu {
+        display: none !important;
+    }
+    
+    .hamburger {
+        display: none !important;
+    }
+    
+    /* Force correct navigation colors on desktop */
+    .nav-menu a {
+        color: #ffffff !important;
+        text-decoration: none !important;
+    }
+    
+    .nav-menu a:visited {
+        color: #ffffff !important;
+    }
+    
+    .nav-menu a:hover {
+        color: #ffffff !important;
+    }
+    
+    .nav-menu a.active {
+        color: #ffffff !important;
+    }
+}
+
 /* Mobile Navigation Improvements */
 @media (max-width: 768px) {
     /* Fix hamburger positioning and styling */
