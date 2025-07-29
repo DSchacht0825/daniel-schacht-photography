@@ -41,7 +41,7 @@
         transform: rotate(45deg) translate(-5px, -6px);
     }
     
-    /* Hide desktop nav menus on mobile */
+    /* Override the default mobile nav-menu behavior from styles.css */
     .nav-menu {
         display: none !important;
     }
