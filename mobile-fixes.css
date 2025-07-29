@@ -488,11 +488,14 @@ img {
         color: #000000 !important;
     }
     
-    /* Adjust pricing section background image to show face better on mobile */
+    /* Force left align pricing background image on mobile */  
+    body .pricing::before,
+    html body .pricing::before,
     .pricing::before {
-        background-position: 40% center !important;
+        background-position: left center !important;
+        background-attachment: scroll !important;
     }
-    
+
     /* Hero section mobile */
     .hero-container {
         grid-template-columns: 1fr !important;
@@ -590,6 +593,7 @@ img {
         padding: 14px 20px !important;
         font-size: 0.9rem !important;
     }
+
 }
 
 /* Extra small screens */
@@ -706,3 +710,4 @@ img {
         padding-right: 40px !important;
     }
 }
+
