@@ -488,6 +488,11 @@ img {
         color: #000000 !important;
     }
     
+    /* Center align pricing section background image on mobile */
+    .pricing::before {
+        background-position: center center !important;
+    }
+    
     /* Hero section mobile */
     .hero-container {
         grid-template-columns: 1fr !important;
