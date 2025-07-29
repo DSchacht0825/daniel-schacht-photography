@@ -411,7 +411,7 @@
         border-bottom: none !important;
     }
     
-    /* Portfolio grid mobile */
+    /* Portfolio grid mobile - performance optimized */
     .portfolio-grid {
         grid-template-columns: 1fr !important;
         gap: 1.5rem !important;
@@ -419,6 +419,27 @@
     
     .portfolio-item img {
         height: 250px !important;
+        object-fit: cover !important;
+        object-position: center !important;
+        will-change: transform !important;
+        transform: translateZ(0) !important; /* Force hardware acceleration */
+    }
+    
+    /* Disable expensive hover effects on mobile for better performance */
+    .portfolio-item:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+    
+    /* Reduce animation complexity on mobile */
+    .scale-in {
+        transition: opacity 0.3s ease !important;
+        transform: none !important;
+    }
+    
+    .scale-in.visible {
+        opacity: 1 !important;
+        transform: none !important;
     }
     
     /* Pricing cards mobile */
