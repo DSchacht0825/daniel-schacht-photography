@@ -448,6 +448,11 @@ img {
         transform: translateZ(0) !important; /* Force hardware acceleration */
     }
     
+    /* Specific positioning for first portfolio image to show head properly */
+    .portfolio-item:first-child img {
+        object-position: center top !important;
+    }
+    
     /* Disable expensive hover effects on mobile for better performance */
     .portfolio-item:hover {
         transform: none !important;
@@ -608,6 +613,13 @@ img {
     
     .portfolio-item img {
         height: 200px !important;
+        object-fit: cover !important;
+        object-position: center !important;
+    }
+    
+    /* Specific positioning for first portfolio image on small screens */
+    .portfolio-item:first-child img {
+        object-position: center top !important;
     }
     
     .hero-image img {
