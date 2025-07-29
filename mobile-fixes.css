@@ -21,6 +21,33 @@ img {
     }
 }
 
+/* Fix pricing card text colors - ensure readability on white background */
+.pricing-card {
+    background: #ffffff !important;
+}
+
+.pricing-card h3,
+.pricing-card .pricing-header h3 {
+    color: #333333 !important;
+}
+
+.pricing-card p,
+.pricing-card .pricing-header p {
+    color: #666666 !important;
+}
+
+.pricing-card .pricing-features li {
+    color: #333333 !important;
+}
+
+.pricing-card .currency {
+    color: #666666 !important;
+}
+
+.pricing-card .amount {
+    color: #007acc !important;
+}
+
 /* Ensure mobile menu is hidden on desktop and fix navigation colors */
 @media (min-width: 769px) {
     .mobile-nav-menu {
@@ -481,6 +508,33 @@ img {
     
     .pricing-card.featured {
         transform: none !important; /* Remove scaling on mobile */
+    }
+    
+    /* Fix pricing card text colors - ensure black text on white background */
+    .pricing-card {
+        background: #ffffff !important;
+    }
+    
+    .pricing-card h3,
+    .pricing-card .pricing-header h3 {
+        color: #333333 !important;
+    }
+    
+    .pricing-card p,
+    .pricing-card .pricing-header p {
+        color: #666666 !important;
+    }
+    
+    .pricing-card .pricing-features li {
+        color: #333333 !important;
+    }
+    
+    .pricing-card .currency {
+        color: #666666 !important;
+    }
+    
+    .pricing-card .amount {
+        color: #007acc !important;
     }
     
     /* Hero section mobile */
