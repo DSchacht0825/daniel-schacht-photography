@@ -488,9 +488,9 @@ img {
         color: #000000 !important;
     }
     
-    /* Center align pricing section background image on mobile */
+    /* Adjust pricing section background image to show face better on mobile */
     .pricing::before {
-        background-position: center center !important;
+        background-position: 60% center !important;
     }
     
     /* Hero section mobile */
