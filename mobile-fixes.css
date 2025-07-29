@@ -483,6 +483,11 @@ img {
         transform: none !important; /* Remove scaling on mobile */
     }
     
+    /* Fix "Most Popular" bubble text color on mobile */
+    .popular-badge {
+        color: #000000 !important;
+    }
+    
     /* Hero section mobile */
     .hero-container {
         grid-template-columns: 1fr !important;
