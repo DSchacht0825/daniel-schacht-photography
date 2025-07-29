@@ -371,34 +371,35 @@
     }
     
     /* Service details section - single column on mobile */
-    .service-details {
+    .services .service-details {
+        display: grid !important;
         grid-template-columns: 1fr !important;
         gap: 3rem !important;
         margin-top: 3rem !important;
     }
     
-    .service-detail {
+    .services .service-detail {
         text-align: left !important;
     }
     
-    .service-detail h3 {
+    .services .service-detail h3 {
         font-size: 1.3rem !important;
         margin-bottom: 1rem !important;
         text-align: left !important;
     }
     
-    .service-detail p {
+    .services .service-detail p {
         font-size: 1rem !important;
         line-height: 1.6 !important;
         margin-bottom: 1.5rem !important;
     }
     
-    .service-detail ul {
+    .services .service-detail ul {
         padding-left: 0 !important;
         margin: 0 !important;
     }
     
-    .service-detail li {
+    .services .service-detail li {
         padding: 0.7rem 0 !important;
         padding-left: 1.5rem !important;
         font-size: 0.95rem !important;
@@ -406,7 +407,7 @@
         border-bottom: 1px solid rgba(255,255,255,0.1) !important;
     }
     
-    .service-detail li:last-child {
+    .services .service-detail li:last-child {
         border-bottom: none !important;
     }
     
