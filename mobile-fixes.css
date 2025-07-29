@@ -503,6 +503,8 @@ img {
     .hero-image img {
         height: 400px !important;
         max-width: 300px !important;
+        object-fit: cover !important;
+        object-position: center top !important; /* Show head/face properly */
     }
     
     /* About section mobile */
@@ -611,6 +613,8 @@ img {
     .hero-image img {
         max-width: 250px !important;
         height: 350px !important;
+        object-fit: cover !important;
+        object-position: center top !important; /* Show head/face properly */
     }
     
     .testimonial-card {
