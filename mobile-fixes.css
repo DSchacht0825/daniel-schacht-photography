@@ -124,24 +124,96 @@
         transform: translateX(-50%);
     }
     
-    /* Action bar mobile improvements */
+    /* Action bar mobile improvements - 4 buttons across bottom */
     .action-bar-content {
-        grid-template-columns: 1fr !important;
-        text-align: center !important;
-        gap: 1rem !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+        padding: 1rem 0 !important;
     }
     
     .action-left, .action-right {
-        flex-direction: column !important;
+        display: flex !important;
+        flex: 1 !important;
         gap: 0.5rem !important;
-        justify-content: center !important;
+        justify-content: space-around !important;
     }
     
     .action-btn {
-        font-size: 0.6rem !important;
-        padding: 0.5rem !important;
-        min-width: 80px !important;
+        font-size: 0.65rem !important;
+        padding: 0.75rem 0.25rem !important;
+        min-width: 0 !important;
+        flex: 1 !important;
+        max-width: 85px !important;
         line-height: 1.1 !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+    
+    /* Hide copyright text on mobile to save space */
+    .copyright-text {
+        display: none !important;
+    }
+    
+    /* Shorter button text for mobile - using CSS content replacement */
+    .action-btn {
+        position: relative !important;
+    }
+    
+    .action-btn:nth-child(1) {
+        text-indent: -9999px !important;
+    }
+    .action-btn:nth-child(1):after {
+        content: "ZOOM CALL" !important;
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        text-indent: 0 !important;
+        white-space: nowrap !important;
+    }
+    
+    .action-btn:nth-child(2) {
+        text-indent: -9999px !important;
+    }
+    .action-btn:nth-child(2):after {
+        content: "BOOK SESSION" !important;
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        text-indent: 0 !important;
+        white-space: nowrap !important;
+    }
+    
+    .action-right .action-btn:nth-child(1) {
+        text-indent: -9999px !important;
+    }
+    .action-right .action-btn:nth-child(1):after {
+        content: "EMAIL" !important;
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        text-indent: 0 !important;
+        white-space: nowrap !important;
+    }
+    
+    .action-right .action-btn:nth-child(2) {
+        text-indent: -9999px !important;
+    }
+    .action-right .action-btn:nth-child(2):after {
+        content: "TEXT" !important;
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        text-indent: 0 !important;
+        white-space: nowrap !important;
     }
     
     /* Contact form mobile improvements */
