@@ -716,7 +716,7 @@ img {
     html body section.pricing::before,
     html body .pricing.page-section::before,
     html body .pricing::before {
-        background-position: left center !important;
+        background-position: right center !important;
     }
 }
 
