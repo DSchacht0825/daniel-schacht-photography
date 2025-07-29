@@ -142,23 +142,77 @@
         font-size: 2rem !important;
     }
     
-    /* Footer mobile improvements */
+    /* Minimalist Mobile Footer */
+    .footer {
+        padding: 2rem 0 1rem 0 !important;
+    }
+    
     .footer-content {
-        grid-template-columns: 1fr !important;
+        display: block !important;
         text-align: center !important;
-        gap: 2rem !important;
+        max-width: 300px !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Hide navigation and right column on mobile */
+    .footer-left,
+    .footer-right {
+        display: none !important;
+    }
+    
+    /* Simplified center content */
+    .footer-center {
+        text-align: center !important;
+    }
+    
+    .footer-center h3 {
+        font-size: 1.2rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .footer-center .tagline {
+        font-size: 0.8rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .footer-contact-info {
+        margin: 0 !important;
+    }
+    
+    .footer-contact-info p {
+        margin: 0.3rem 0 !important;
+        font-size: 0.9rem !important;
+    }
+    
+    /* Minimal social links - just Instagram */
+    .footer-social {
+        margin-top: 1rem !important;
     }
     
     .social-links {
-        flex-direction: column !important;
-        gap: 0.5rem !important;
-        align-items: center !important;
+        display: flex !important;
+        justify-content: center !important;
+        gap: 0 !important;
     }
     
-    .social-link {
-        width: 200px !important;
-        justify-content: center !important;
-        padding: 0.75rem !important;
+    /* Hide Facebook and LinkedIn, show only Instagram */
+    .social-link:nth-child(1),
+    .social-link:nth-child(3) {
+        display: none !important;
+    }
+    
+    .social-link:nth-child(2) {
+        width: auto !important;
+        padding: 0.5rem 1rem !important;
+        font-size: 0.8rem !important;
+        background: rgba(225,48,108,0.15) !important;
+        border-color: rgba(225,48,108,0.4) !important;
+        color: #e1306c !important;
+    }
+    
+    .social-link:nth-child(2) svg {
+        width: 16px !important;
+        height: 16px !important;
     }
     
     /* Services grid mobile */
