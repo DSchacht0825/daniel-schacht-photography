@@ -726,7 +726,7 @@ img {
 .contact-methods {
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    gap: 2.5rem;
     margin: 4rem 0;
     flex-wrap: wrap;
 }
