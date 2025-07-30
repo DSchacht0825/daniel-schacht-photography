@@ -7,6 +7,9 @@ Sitemap: https://danielschachtphotography.com/sitemap.xml
 # Crawl-delay
 Crawl-delay: 1
 
+# Disallow Cloudflare paths that cause 404s
+Disallow: /cdn-cgi/
+
 # Disallow admin or sensitive areas (if any)
 # Disallow: /admin/
 # Disallow: /private/
