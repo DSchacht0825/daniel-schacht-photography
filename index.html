@@ -1102,17 +1102,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     
-    <!-- Preload critical resources -->
-    <link rel="preload" href="styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="images/portfolio/photo-5.jpg" as="image">
-    <link rel="preload" href="script.min.js" as="script">
-    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
     <!-- Font loading with fallback -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"></noscript>
-    
-    <!-- Critical CSS -->
-    <noscript><link rel="stylesheet" href="styles.min.css"></noscript>
+
     <link rel="stylesheet" href="mobile-fixes.css">
     
     <!-- Google Analytics -->
@@ -1188,6 +1184,11 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <!-- Video Background -->
+        <video class="hero-video" autoplay loop muted playsinline preload="auto">
+            <source src="images/hero/hero-video.webm" type="video/webm">
+            <source src="images/hero/hero-video.mp4" type="video/mp4">
+        </video>
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">
@@ -1199,13 +1200,6 @@
                 <div class="hero-buttons">
                     <a href="portfolio.html" class="btn btn-primary">View Work</a>
                     <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="images/hero/hero-image.jpg" alt="Daniel Schacht professional photographer" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="image-placeholder" style="display: none;">
-                    <!-- Replace with your professional headshot or camera setup -->
-                    <div class="placeholder-text">Your Professional Photo</div>
                 </div>
             </div>
         </div>
@@ -1374,6 +1368,28 @@
             autoplay: true,
             autoplaySpeed: 4000
         });
+    </script>
+
+    <!-- Video autoplay handler -->
+    <script>
+        // Fallback: play on user interaction if autoplay is blocked
+        let hasPlayed = false;
+        function tryPlayVideo() {
+            if (!hasPlayed) {
+                const video = document.querySelector('.hero-video');
+                if (video && video.paused) {
+                    video.play().then(function() {
+                        console.log('Video started on user interaction');
+                        hasPlayed = true;
+                    }).catch(function(e) {
+                        console.log('Still cannot play:', e);
+                    });
+                }
+            }
+        }
+
+        document.addEventListener('click', tryPlayVideo, { once: true });
+        document.addEventListener('touchstart', tryPlayVideo, { once: true });
     </script>
 </body>
 </html>
