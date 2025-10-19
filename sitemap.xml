@@ -5,20 +5,20 @@
   <!-- Homepage -->
   <url>
     <loc>https://danielschachtphotography.com/</loc>
-    <lastmod>2025-01-29</lastmod>
+    <lastmod>2025-10-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://danielschachtphotography.com/images/portfolio/photo-5.jpg</image:loc>
+      <image:loc>https://danielschachtphotography.com/images/hero/hero-video.webm</image:loc>
       <image:caption>Professional headshot photographer in San Diego</image:caption>
-      <image:title>Daniel Schacht Photography Hero Image</image:title>
+      <image:title>Daniel Schacht Photography Hero Video</image:title>
     </image:image>
   </url>
   
   <!-- About Page -->
   <url>
     <loc>https://danielschachtphotography.com/about.html</loc>
-    <lastmod>2025-01-29</lastmod>
+    <lastmod>2025-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
