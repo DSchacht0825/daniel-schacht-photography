@@ -10,6 +10,11 @@ Crawl-delay: 1
 # Disallow Cloudflare paths that cause 404s
 Disallow: /cdn-cgi/
 
+# Disallow old WordPress/CMS paths
+Disallow: /category/
+Disallow: /tag/
+Disallow: /author/
+
 # Disallow admin or sensitive areas (if any)
 # Disallow: /admin/
 # Disallow: /private/
