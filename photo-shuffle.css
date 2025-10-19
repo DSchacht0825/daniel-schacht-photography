@@ -1,0 +1,146 @@
+/* Photo Shuffle Animation Styles */
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-item img {
+    transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+    will-change: transform, opacity;
+}
+
+/* Shuffle animation states */
+.portfolio-item.shuffling {
+    overflow: hidden;
+    position: relative;
+}
+
+.portfolio-item.shuffling img {
+    animation: slotMachineSpin 0.08s infinite linear;
+}
+
+.portfolio-item.landing {
+    overflow: hidden;
+}
+
+.portfolio-item.landing img {
+    animation: slotMachineLand 0.8s ease-out;
+}
+
+/* Simple spinning effect - less distracting */
+@keyframes slotMachineSpin {
+    0% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+/* Simple landing effect - less distracting */
+@keyframes slotMachineLand {
+    0% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Remove all border effects to be less distracting */
+
+/* Enhance portfolio grid for better shuffle effect */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.portfolio-item {
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #f8f9fa;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Loading state for shuffle */
+.portfolio-item.loading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #333;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 1;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+    
+    .portfolio-item {
+        border-radius: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+}
+
+/* Accessibility and performance */
+@media (prefers-reduced-motion: reduce) {
+    .portfolio-item img {
+        animation: none !important;
+        transition: opacity 0.3s ease;
+    }
+    
+    .portfolio-item.shuffling img {
+        animation: none;
+    }
+    
+    .portfolio-item.landing img {
+        animation: none;
+    }
+}
+
+/* Focus states for accessibility */
+.portfolio-item:focus-within {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}

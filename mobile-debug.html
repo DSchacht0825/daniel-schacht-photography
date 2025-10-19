@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile CSS Debug Test</title>
+    <link rel="stylesheet" href="styles.min.css">
+    <link rel="stylesheet" href="mobile-fixes.css">
+    <style>
+        /* Debug styles to verify mobile fixes are loading */
+        .debug-info {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            font-size: 12px;
+            z-index: 9999;
+            border-radius: 5px;
+        }
+        
+        /* Test if mobile-fixes.css is loading */
+        .debug-mobile-loaded {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .debug-mobile-loaded {
+                display: block;
+            }
+            
+            .debug-info {
+                background: rgba(0, 255, 0, 0.8);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-info">
+        <div>Screen: <span id="screenSize"></span></div>
+        <div class="debug-mobile-loaded">📱 Mobile CSS Active</div>
+        <div>Background Test Below ⬇️</div>
+    </div>
+
+    <!-- Test pricing section -->
+    <section class="pricing">
+        <div class="container">
+            <h2>Pricing Background Test</h2>
+            <p>The background should be photo-14.jpg on mobile (≤768px) and photo17.jpg on desktop.</p>
+            <div style="height: 400px; border: 2px solid white; margin: 20px 0;">
+                <p style="color: white; text-align: center; padding: 20px;">
+                    Test content area<br>
+                    Background should be visible behind this
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function updateScreenSize() {
+            document.getElementById('screenSize').textContent = window.innerWidth + 'px';
+        }
+        
+        updateScreenSize();
+        window.addEventListener('resize', updateScreenSize);
+        
+        // Log computed styles for debugging
+        window.addEventListener('load', function() {
+            const pricingSection = document.querySelector('.pricing');
+            if (pricingSection) {
+                const beforeStyles = window.getComputedStyle(pricingSection, ':before');
+                console.log('Pricing ::before background-image:', beforeStyles.backgroundImage);
+                console.log('Pricing ::before background-position:', beforeStyles.backgroundPosition);
+            }
+        });
+    </script>
+</body>
+</html>
