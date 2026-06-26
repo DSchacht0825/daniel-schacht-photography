@@ -1186,11 +1186,21 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <!-- Photo slideshow background (plays always; video layers on top when available) -->
+        <div class="hero-bg-slides" aria-hidden="true">
+            <div class="hero-bg-slide" style="background-image: url('images/portfolio/photo-7.jpg')"></div>
+            <div class="hero-bg-slide" style="background-image: url('images/portfolio/photo-9.jpg')"></div>
+            <div class="hero-bg-slide" style="background-image: url('images/portfolio/photo-6.jpg')"></div>
+            <div class="hero-bg-slide" style="background-image: url('images/portfolio/photo-5.jpg')"></div>
+            <div class="hero-bg-slide" style="background-image: url('images/portfolio/photo-4.jpg')"></div>
+        </div>
+
         <!-- Video Background -->
-        <video class="hero-video" autoplay loop muted playsinline preload="metadata" loading="lazy">
+        <video class="hero-video" autoplay loop muted playsinline preload="auto">
             <source src="images/hero/hero-video.webm" type="video/webm">
             <source src="images/hero/hero-video.mp4" type="video/mp4">
         </video>
+
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">
@@ -1205,7 +1215,21 @@
                 </div>
             </div>
         </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator" onclick="document.querySelector('.services-overview').scrollIntoView({behavior:'smooth'})" aria-hidden="true">
+            <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+            <span class="scroll-label">Scroll</span>
+        </div>
     </section>
+
+    <!-- Floating book CTA (appears after hero) -->
+    <div class="floating-cta" id="floating-cta">
+        <a href="contact.html">
+            <span class="floating-cta-dot"></span>
+            Book a Session
+        </a>
+    </div>
 
     <!-- Services Overview Section -->
     <section class="services-overview" style="padding: 80px 20px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
@@ -1434,26 +1458,64 @@
         });
     </script>
 
-    <!-- Video autoplay handler -->
     <script>
-        // Fallback: play on user interaction if autoplay is blocked
-        let hasPlayed = false;
-        function tryPlayVideo() {
-            if (!hasPlayed) {
-                const video = document.querySelector('.hero-video');
-                if (video && video.paused) {
-                    video.play().then(function() {
-                        console.log('Video started on user interaction');
-                        hasPlayed = true;
-                    }).catch(function(e) {
-                        console.log('Still cannot play:', e);
-                    });
-                }
-            }
+    (function() {
+        // --- Hero photo slideshow ---
+        const slides = document.querySelectorAll('.hero-bg-slide');
+        let current = 0;
+        if (slides.length) {
+            slides[0].classList.add('active');
+            setInterval(function() {
+                slides[current].classList.remove('active');
+                current = (current + 1) % slides.length;
+                slides[current].classList.add('active');
+            }, 5000);
         }
 
-        document.addEventListener('click', tryPlayVideo, { once: true });
-        document.addEventListener('touchstart', tryPlayVideo, { once: true });
+        // --- Video autoplay ---
+        const video = document.querySelector('.hero-video');
+        if (video) {
+            const tryPlay = function() {
+                video.play().then(function() {
+                    video.classList.remove('hidden');
+                }).catch(function() {
+                    // Autoplay blocked — show slideshow, hide broken video element
+                    video.classList.add('hidden');
+                });
+            };
+
+            if (document.readyState === 'complete' || document.readyState === 'interactive') {
+                tryPlay();
+            } else {
+                document.addEventListener('DOMContentLoaded', tryPlay);
+            }
+
+            // Also attempt on first user interaction in case autoplay was initially blocked
+            ['click', 'touchstart', 'scroll'].forEach(function(evt) {
+                document.addEventListener(evt, function handler() {
+                    if (video.paused) {
+                        video.play().then(function() {
+                            video.classList.remove('hidden');
+                        }).catch(function() {});
+                    }
+                    document.removeEventListener(evt, handler);
+                }, { once: true });
+            });
+        }
+
+        // --- Floating CTA: show after scrolling past hero ---
+        const floatingCta = document.getElementById('floating-cta');
+        if (floatingCta) {
+            const heroHeight = window.innerHeight;
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > heroHeight * 0.6) {
+                    floatingCta.classList.add('visible');
+                } else {
+                    floatingCta.classList.remove('visible');
+                }
+            }, { passive: true });
+        }
+    })();
     </script>
 </body>
 </html>
