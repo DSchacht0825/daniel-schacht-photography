@@ -1,83 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
-  <!-- Homepage -->
-  <url>
-    <loc>https://danielschachtphotography.com/</loc>
-    <lastmod>2025-10-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://danielschachtphotography.com/images/hero/hero-video.webm</image:loc>
-      <image:caption>Professional headshot photographer in San Diego</image:caption>
-      <image:title>Daniel Schacht Photography Hero Video</image:title>
-    </image:image>
-  </url>
-  
-  <!-- About Page -->
-  <url>
-    <loc>https://danielschachtphotography.com/about.html</loc>
-    <lastmod>2025-10-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://danielschachtphotography.com/images/about/daniel-headshot.jpg</image:loc>
-      <image:caption>Daniel Schacht professional headshot photographer</image:caption>
-      <image:title>About Daniel Schacht Photography</image:title>
-    </image:image>
-  </url>
-  
-  <!-- Services Page -->
-  <url>
-    <loc>https://danielschachtphotography.com/services.html</loc>
-    <lastmod>2025-01-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Portfolio Page -->
-  <url>
-    <loc>https://danielschachtphotography.com/portfolio.html</loc>
-    <lastmod>2025-01-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://danielschachtphotography.com/images/portfolio/photo-7.jpg</image:loc>
-      <image:caption>Professional headshot and portrait photography in San Diego</image:caption>
-      <image:title>Portrait Photography Portfolio</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://danielschachtphotography.com/images/portfolio/photo-3.jpg</image:loc>
-      <image:caption>Corporate headshots and LinkedIn photography in San Diego</image:caption>
-      <image:title>Professional Headshots Portfolio</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://danielschachtphotography.com/images/portfolio/graduation-1.jpg</image:loc>
-      <image:caption>San Diego graduation photography - high school and college senior portraits</image:caption>
-      <image:title>Graduation Photography Portfolio</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://danielschachtphotography.com/images/portfolio/senior-1.jpg</image:loc>
-      <image:caption>Senior graduation portraits and cap and gown photography in San Diego</image:caption>
-      <image:title>Senior Graduation Photography Portfolio</image:title>
-    </image:image>
-  </url>
-  
-  <!-- Pricing Page -->
-  <url>
-    <loc>https://danielschachtphotography.com/pricing.html</loc>
-    <lastmod>2025-01-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Contact Page -->
-  <url>
-    <loc>https://danielschachtphotography.com/contact.html</loc>
-    <lastmod>2025-01-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.danielschachtphotography.com/</loc><lastmod>2026-11-21</lastmod><priority>1.0</priority></url>
+  <url><loc>https://www.danielschachtphotography.com/about.html</loc><lastmod>2026-11-21</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.danielschachtphotography.com/work.html</loc><lastmod>2026-11-21</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.danielschachtphotography.com/pricing.html</loc><lastmod>2026-11-21</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.danielschachtphotography.com/contact.html</loc><lastmod>2026-11-21</lastmod><priority>0.9</priority></url>
 </urlset>
